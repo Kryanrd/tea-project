@@ -1,0 +1,13 @@
+<div class="col">
+    <div class="card p-0">
+        <div class="card-img">
+            <img src="{{product.image}}" class="card-img-top" alt="Card1">
+        </div>
+        <div class="card-body p-4">
+            <h5 class="card-title">{{product.title}}</h5>
+            <p class="card-text">{{product.description | shortDescription}}</p>
+            <p class="card-text">Цена: <span class="fw-bold">{{product.price | number:'1.0-0'}} руб / 100 г.</span></p>
+            <a class="btn btn-primary px-4 hvr-shutter-in-horizontal"  [routerLink]="['/products', product.id]">Подробнее</a>
+        </div>
+    </div>
+</div>

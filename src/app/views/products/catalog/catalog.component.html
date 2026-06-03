@@ -1,0 +1,7 @@
+<main class="container mb-5">
+    <h2 class="text-center mt-2 mb-5">Наши чайные коллекции</h2>
+    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4 row-cols-xxl-3">
+        <product-card *ngFor="let product of products" [product]="product">
+        </product-card>
+    </div>
+</main>
