@@ -1,27 +1,89 @@
-# AngularTeaProject
+# Tea Store
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+## Демо
 
-## Development server
+[Открыть приложение](https://kryanrd.github.io/tea-project/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## О проекте
 
-## Code scaffolding
+Tea Store - одностраничное веб-приложение интернет-магазина чая, позволяющее ознакомиться с ассортиментом продукции, просмотреть подробную информацию о товарах и оформить заказ.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Проект разработан с использованием Angular и демонстрирует работу с компонентной архитектурой, маршрутизацией, HTTP-запросами и реактивными формами. Для получения информации о товарах и отправки заказов приложение взаимодействует с внешним REST API. Публикация приложения выполнена с помощью GitHub Pages.
 
-## Build
+## Функциональность
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Главная страница:** отображение слайдера с автоматическим переключением изображений и раздела с часто задаваемыми вопросами.
+- **Каталог товаров:** получение списка чайной продукции через REST API и отображение карточек с изображениями, описаниями и ценами.
+- **Карточка товара:** просмотр подробной информации о выбранном чае с возможностью перейти к оформлению заказа.
+- **Оформление заказа:** заполнение формы с контактными данными покупателя, адресом доставки и информацией о выбранном товаре.
+- **Валидация формы:** проверка корректности введённых данных с отображением сообщений об ошибках.
+- **Отправка заказа:** передача заполненной формы на сервер через HTTP POST-запрос и обработка результата операции.
+- **Всплывающее окно:** автоматическое отображение предложения ознакомиться с каталогом через 10 секунд после открытия главной страницы.
+- **Навигация:** переключение между страницами приложения с помощью Angular Router без полной перезагрузки страницы.
 
-## Running unit tests
+## Особенности реализации на Angular
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Разделение приложения на функциональные модули и переиспользуемые компоненты.
+- Использование Angular Router для организации маршрутизации и передачи параметров между страницами.
+- Создание сервиса `ProductService` для получения информации о товарах и отправки заказов.
+- Использование `HttpClient` и RxJS для выполнения HTTP-запросов и обработки асинхронных данных.
+- Реализация реактивной формы с помощью `FormBuilder`, `FormGroup` и встроенных валидаторов Angular.
+- Передача выбранного товара на страницу оформления заказа через параметры URL.
+- Создание пользовательского Pipe для сокращения длинных описаний товаров.
+- Использование `Subscription` и отписки от Observable для управления подписками и предотвращения утечек памяти.
 
-## Running end-to-end tests
+## Технологии
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Angular 14** - основной framework для разработки приложения.
+- **TypeScript** - реализация клиентской логики и типизация данных.
+- **HTML5** - структура страниц и компонентов.
+- **SCSS** - стилизация пользовательского интерфейса.
+- **Bootstrap 5.2** - адаптивная сетка и оформление интерфейса.
+- **ng-bootstrap** - Angular-компоненты Bootstrap, включая слайдер и аккордеон.
+- **RxJS** - работа с асинхронными данными и Observable.
+- **Angular Router** - клиентская маршрутизация.
+- **Angular Reactive Forms** - создание и валидация форм.
+- **Angular HttpClient** - взаимодействие с REST API.
+- **GitHub Pages** - публикация приложения.
 
-## Further help
+## Запуск проекта
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Для локального запуска потребуется установленный Node.js и npm.
+
+### 1. Клонирование репозитория
+
+```bash
+git clone https://github.com/Kryanrd/tea-project.git
+cd tea-project
+```
+
+### 2. Установка зависимостей
+
+Выполните команду в корневой папке проекта:
+
+```bash
+npm install
+```
+
+### 3. Запуск приложения
+
+Запустите локальный сервер разработки:
+
+```bash
+npm start
+```
+
+После запуска приложение будет доступно по адресу:
+
+`http://localhost:4200/`
+
+
+## Сборка проекта
+
+Для создания production-сборки выполните:
+
+```bash
+npm run build
+```
+
+Собранные файлы приложения будут размещены в папке `dist/angular-tea-project/`.
